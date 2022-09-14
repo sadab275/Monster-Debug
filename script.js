@@ -12,6 +12,7 @@ let startTime;
 let questionText = "";
 
 // Load and display question
+
 fetch("./texts.json")
   .then((res) => res.json())
   .then((data) => {
@@ -20,8 +21,9 @@ fetch("./texts.json")
     console.log(questionText);
   });
 
+
 // checks the user typed character and displays accordingly
-const typeController = (e) => {
+function typeController(e) {
   const newLetter = e.key;
 
   // Handle backspace press
@@ -31,8 +33,7 @@ const typeController = (e) => {
   }
 
   // these are the valid character we are allowing to type
-  const validLetters =
-    "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ 1234567890!@#$%^&*()_+-={}[]'\".,?";
+  const validLetters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ 1234567890!@#$%^&*()_+-={}[]'\".,?";
 
   // if it is not a valid character like Control/Alt then skip displaying anything
   if (!validLetters.includes(newLetter)) {
@@ -53,13 +54,17 @@ const typeController = (e) => {
   if (questionText === userText) {
     gameOver();
   }
-};
+}
 
 const validate = (key) => {
   if (key === questionText[userText.length - 1]) {
     return true;
   }
-  return false;
+  else {
+    errorCount++;
+    return false;
+  }
+
 };
 
 // FINISHED TYPING
@@ -68,7 +73,7 @@ const gameOver = () => {
   // the current time is the finish time
   // so total time taken is current time - start time
   const finishTime = new Date().getTime();
-  const timeTaken = (finishTime - startTime) / 1000;
+  const timeTaken = parseInt((finishTime - startTime) / 1000);
 
   // show result modal
   resultModal.innerHTML = "";
