@@ -194,3 +194,18 @@ button {
     flex-direction: column;
   }
 }
+
+@media only screen and (min-width: 992px) {
+  /* .box-container {
+    padding: 0 20px;
+    width: 100%;
+  }
+
+  .card {
+    flex-direction: column;
+  } */
+
+  #histories {
+    display: inline;
+  }
+}
