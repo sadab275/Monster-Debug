@@ -196,16 +196,29 @@ button {
 }
 
 @media only screen and (min-width: 992px) {
-  /* .box-container {
+  .box-container {
     padding: 0 20px;
     width: 100%;
   }
 
-  .card {
-    flex-direction: column;
-  } */
-
   #histories {
-    display: inline;
+    display: flex;
   }
+
+  .card {
+    box-shadow: 5px 5px 40px gray;
+    width: 23%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 24px;
+    margin-bottom: 53px;
+    padding-left: 0px;
+    padding-top: 26px;
+    padding-bottom: 22px;
+    border-radius: 9px;
+    font-weight: 700px;
+
+  }
+
+
 }
